@@ -19,7 +19,7 @@ public class Produto {
     @NotBlank
     private String nome;
     @NotBlank
-    private double preco;
+    private String preco;
     private StatusPromocao statusPromocao;
 
     private LocalDateTime dataHoraDoCadastro;
