@@ -2,10 +2,11 @@ package br.com.siteware.sitewareProduto.application.api;
 
 import br.com.siteware.sitewareProduto.domain.Produto;
 import br.com.siteware.sitewareProduto.domain.StatusPromocao;
+import lombok.Value;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Value
 public class ProdutoListResponse {
     private String nome;
     private String preco;
