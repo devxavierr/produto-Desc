@@ -1,5 +1,6 @@
 package br.com.siteware.sitewareProduto.application.service;
 
+import br.com.siteware.sitewareProduto.application.api.ProdutoDetalhadoResponse;
 import br.com.siteware.sitewareProduto.application.api.ProdutoListResponse;
 import br.com.siteware.sitewareProduto.application.api.ProdutoRequest;
 import br.com.siteware.sitewareProduto.application.api.ProdutoResponse;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -33,5 +35,12 @@ public class ProdutoApplicationService implements ProdutoService {
         List<Produto> produtos = produtoRepository.buscaTodosProdutos();
         log.info("[finaliza] ProdutoApplicationService - buscaTodosProdutos");
         return ProdutoListResponse.converte(produtos);
+    }
+
+    @Override
+    public ProdutoDetalhadoResponse buscaProdutoAtravesId(UUID idProduto) {
+        log.info("[inicia] ProdutoApplicationService - buscaProdutoAtravesId");
+        log.info("[finaliza] ProdutoApplicationService - buscaProdutoAtravesId");
+        return null;
     }
 }
