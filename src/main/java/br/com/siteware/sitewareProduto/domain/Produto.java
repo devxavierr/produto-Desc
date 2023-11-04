@@ -1,6 +1,6 @@
 package br.com.siteware.sitewareProduto.domain;
 
-import br.com.siteware.sitewareProduto.application.api.ProdutoRequest;
+import br.com.siteware.sitewareProduto.application.api.ProdutoAlteracaoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +26,7 @@ public class Produto {
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
-    public Produto(ProdutoRequest produtoRequest) {
+    public Produto(ProdutoAlteracaoRequest produtoRequest) {
         this.nome = produtoRequest.getNome();
         this.preco = produtoRequest.getPreco();
         this.statusPromocao = produtoRequest.getStatusPromocao();

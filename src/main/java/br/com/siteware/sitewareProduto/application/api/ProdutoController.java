@@ -15,7 +15,7 @@ public class ProdutoController implements ProdutoAPI {
     private final ProdutoService produtoService;
 
     @Override
-    public ProdutoResponse postProduto(ProdutoRequest produtoRequest) {
+    public ProdutoResponse postProduto(ProdutoAlteracaoRequest produtoRequest) {
         log.info("[inicia] ProdutoController - postProduto");
         ProdutoResponse produtoCriado = produtoService.criaProduto(produtoRequest);
         log.info("[finaliza] ProdutoController - postProduto");
@@ -44,5 +44,13 @@ public class ProdutoController implements ProdutoAPI {
         produtoService.deletaProdutoAtravesId(idProduto);
         log.info("[finaliza] ProdutoController - deletaProdutoAtravesId");
     }
+
+    @Override
+    public void patchAlteraProduto(UUID idProduto, ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+        log.info("[inicia] ProdutoController - patchAlteraProduto");
+        log.info("[finaliza] ProdutoController - patchAlteraProduto");
+
+    }
+
 
 }

@@ -12,7 +12,7 @@ import java.util.UUID;
 public interface ProdutoAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    ProdutoResponse postProduto(@Valid @RequestBody ProdutoRequest produtoRequest);
+    ProdutoResponse postProduto(@Valid @RequestBody ProdutoAlteracaoRequest produtoRequest);
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
@@ -25,4 +25,9 @@ public interface ProdutoAPI {
     @DeleteMapping(value = "/{idProduto}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaProdutoAtravesId(@PathVariable UUID idProduto);
+
+    @PatchMapping(value = "/{idProduto}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAlteraProduto(@PathVariable UUID idProduto,
+                            @Valid @RequestBody ProdutoAlteracaoRequest produtoAlteracaoRequest);
 }
