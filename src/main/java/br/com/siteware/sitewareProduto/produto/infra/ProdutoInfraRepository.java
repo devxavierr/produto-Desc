@@ -1,7 +1,7 @@
-package br.com.siteware.sitewareProduto.infra;
+package br.com.siteware.sitewareProduto.produto.infra;
 
-import br.com.siteware.sitewareProduto.application.repository.ProdutoRepository;
-import br.com.siteware.sitewareProduto.domain.Produto;
+import br.com.siteware.sitewareProduto.produto.application.repository.ProdutoRepository;
+import br.com.siteware.sitewareProduto.produto.domain.Produto;
 import br.com.siteware.sitewareProduto.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -40,5 +40,14 @@ public class ProdutoInfraRepository implements ProdutoRepository {
                 .orElseThrow(()-> APIException.build(HttpStatus.NOT_FOUND, "Produto não encontrado!"));
         log.info("[finaliza] ProdutoInfraRepository - buscaProdutoAtravesId");
         return produto;
+    }
+
+    @Override
+    public void deletaProduto(Produto produto) {
+        log.info("[inicia] ProdutoInfraRepository - deletaProduto");
+        produtoSpringDataJPARepository.delete(produto);
+        log.info("[finaliza] ProdutoInfraRepository - deletaProduto");
+
+
     }
 }

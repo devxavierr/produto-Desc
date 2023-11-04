@@ -1,6 +1,6 @@
-package br.com.siteware.sitewareProduto.infra;
+package br.com.siteware.sitewareProduto.produto.infra;
 
-import br.com.siteware.sitewareProduto.domain.Produto;
+import br.com.siteware.sitewareProduto.produto.domain.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

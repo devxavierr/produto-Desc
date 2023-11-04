@@ -1,4 +1,4 @@
-package br.com.siteware.sitewareProduto.application.api;
+package br.com.siteware.sitewareProduto.produto.application.api;
 
 import lombok.Builder;
 import lombok.Value;

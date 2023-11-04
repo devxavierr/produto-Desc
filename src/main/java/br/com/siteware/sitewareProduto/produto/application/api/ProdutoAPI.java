@@ -1,4 +1,4 @@
-package br.com.siteware.sitewareProduto.application.api;
+package br.com.siteware.sitewareProduto.produto.application.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.UUID;
 public interface ProdutoAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    ProdutoResponse postProduto(@Valid @RequestBody ProdutoRequest produtoRequest);
+    ProdutoResponse postProduto(@Valid @RequestBody ProdutoAlteracaoRequest produtoRequest);
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
@@ -21,4 +21,13 @@ public interface ProdutoAPI {
     @GetMapping(value = "/{idProduto}")
     @ResponseStatus(code = HttpStatus.OK)
     ProdutoDetalhadoResponse getProdutoAtravesId(@PathVariable UUID idProduto);
+
+    @DeleteMapping(value = "/{idProduto}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletaProdutoAtravesId(@PathVariable UUID idProduto);
+
+    @PatchMapping(value = "/{idProduto}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAlteraProduto(@PathVariable UUID idProduto,
+                            @Valid @RequestBody ProdutoAlteracaoRequest produtoAlteracaoRequest);
 }

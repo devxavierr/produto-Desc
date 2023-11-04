@@ -1,6 +1,6 @@
-package br.com.siteware.sitewareProduto.domain;
+package br.com.siteware.sitewareProduto.produto.domain;
 
-import br.com.siteware.sitewareProduto.application.api.ProdutoRequest;
+import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,12 +26,19 @@ public class Produto {
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
-    public Produto(ProdutoRequest produtoRequest) {
+    public Produto(ProdutoAlteracaoRequest produtoRequest) {
         this.nome = produtoRequest.getNome();
         this.preco = produtoRequest.getPreco();
         this.statusPromocao = produtoRequest.getStatusPromocao();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 
+
+    public void altera(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+        this.nome = produtoAlteracaoRequest.getNome();
+        this.preco = produtoAlteracaoRequest.getPreco();
+        this.statusPromocao = produtoAlteracaoRequest.getStatusPromocao();
+        this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
+    }
 
 }
