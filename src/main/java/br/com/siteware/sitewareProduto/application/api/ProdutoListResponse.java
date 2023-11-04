@@ -5,9 +5,11 @@ import br.com.siteware.sitewareProduto.domain.StatusPromocao;
 import lombok.Value;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 @Value
 public class ProdutoListResponse {
+    private UUID idProduto;
     private String nome;
     private String preco;
     private StatusPromocao statusPromocao;
@@ -19,6 +21,7 @@ public class ProdutoListResponse {
     }
 
     public ProdutoListResponse(Produto produto) {
+        this.idProduto= produto.getIdProduto();
         this.nome = produto.getNome();
         this.preco = produto.getPreco();
         this.statusPromocao = produto.getStatusPromocao();
