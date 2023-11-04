@@ -12,4 +12,6 @@ public interface ProdutoService {
     ProdutoResponse criaProduto(ProdutoRequest produtoRequest);
     List<ProdutoListResponse> buscaTodosProdutos();
     ProdutoDetalhadoResponse buscaProdutoAtravesId(UUID idProduto);
+
+    void deletaProdutoAtravesId(UUID idProduto);
 }

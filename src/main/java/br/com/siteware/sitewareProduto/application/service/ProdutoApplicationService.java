@@ -44,4 +44,12 @@ public class ProdutoApplicationService implements ProdutoService {
         log.info("[finaliza] ProdutoApplicationService - buscaProdutoAtravesId");
         return new ProdutoDetalhadoResponse(produto);
     }
+
+    @Override
+    public void deletaProdutoAtravesId(UUID idProduto) {
+        log.info("[inicia] ProdutoApplicationService - deletaProdutoAtravesId");
+        Produto produto = produtoRepository.buscaProdutoAtravesId(idProduto);
+        produtoRepository.deletaProduto(produto);
+        log.info("[finaliza] ProdutoApplicationService - deletaProdutoAtravesId");
+    }
 }

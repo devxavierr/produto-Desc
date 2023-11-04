@@ -9,4 +9,5 @@ public interface ProdutoRepository {
     Produto salva(Produto produto);
     List<Produto> buscaTodosProdutos();
     Produto buscaProdutoAtravesId(UUID idProduto);
+    void deletaProduto(Produto produto);
 }
