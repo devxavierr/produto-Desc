@@ -48,6 +48,7 @@ public class ProdutoController implements ProdutoAPI {
     @Override
     public void patchAlteraProduto(UUID idProduto, ProdutoAlteracaoRequest produtoAlteracaoRequest) {
         log.info("[inicia] ProdutoController - patchAlteraProduto");
+        produtoService.patchAlteraProduto(idProduto, produtoAlteracaoRequest);
         log.info("[finaliza] ProdutoController - patchAlteraProduto");
 
     }

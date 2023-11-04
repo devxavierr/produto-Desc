@@ -34,4 +34,11 @@ public class Produto {
     }
 
 
+    public void altera(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+        this.nome = produtoAlteracaoRequest.getNome();
+        this.preco = produtoAlteracaoRequest.getPreco();
+        this.statusPromocao = produtoAlteracaoRequest.getStatusPromocao();
+        this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
+    }
+
 }
