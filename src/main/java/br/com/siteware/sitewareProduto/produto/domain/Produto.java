@@ -1,6 +1,6 @@
-package br.com.siteware.sitewareProduto.domain;
+package br.com.siteware.sitewareProduto.produto.domain;
 
-import br.com.siteware.sitewareProduto.application.api.ProdutoAlteracaoRequest;
+import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

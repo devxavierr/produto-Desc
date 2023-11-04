@@ -1,4 +1,4 @@
-package br.com.siteware.sitewareProduto.application.api;
+package br.com.siteware.sitewareProduto.produto.application.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

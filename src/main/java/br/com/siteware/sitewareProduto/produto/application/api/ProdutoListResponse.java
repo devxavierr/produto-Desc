@@ -1,7 +1,7 @@
-package br.com.siteware.sitewareProduto.application.api;
+package br.com.siteware.sitewareProduto.produto.application.api;
 
-import br.com.siteware.sitewareProduto.domain.Produto;
-import br.com.siteware.sitewareProduto.domain.StatusPromocao;
+import br.com.siteware.sitewareProduto.produto.domain.Produto;
+import br.com.siteware.sitewareProduto.produto.domain.StatusPromocao;
 import lombok.Value;
 
 import java.util.List;

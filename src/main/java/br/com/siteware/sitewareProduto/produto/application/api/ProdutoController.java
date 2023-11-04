@@ -1,6 +1,6 @@
-package br.com.siteware.sitewareProduto.application.api;
+package br.com.siteware.sitewareProduto.produto.application.api;
 
-import br.com.siteware.sitewareProduto.application.service.ProdutoService;
+import br.com.siteware.sitewareProduto.produto.application.service.ProdutoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;

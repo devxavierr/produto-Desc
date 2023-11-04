@@ -1,7 +1,7 @@
-package br.com.siteware.sitewareProduto.infra;
+package br.com.siteware.sitewareProduto.produto.infra;
 
-import br.com.siteware.sitewareProduto.application.repository.ProdutoRepository;
-import br.com.siteware.sitewareProduto.domain.Produto;
+import br.com.siteware.sitewareProduto.produto.application.repository.ProdutoRepository;
+import br.com.siteware.sitewareProduto.produto.domain.Produto;
 import br.com.siteware.sitewareProduto.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

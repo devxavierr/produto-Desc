@@ -1,11 +1,11 @@
-package br.com.siteware.sitewareProduto.application.service;
+package br.com.siteware.sitewareProduto.produto.application.service;
 
-import br.com.siteware.sitewareProduto.application.api.ProdutoDetalhadoResponse;
-import br.com.siteware.sitewareProduto.application.api.ProdutoListResponse;
-import br.com.siteware.sitewareProduto.application.api.ProdutoAlteracaoRequest;
-import br.com.siteware.sitewareProduto.application.api.ProdutoResponse;
-import br.com.siteware.sitewareProduto.application.repository.ProdutoRepository;
-import br.com.siteware.sitewareProduto.domain.Produto;
+import br.com.siteware.sitewareProduto.produto.application.api.ProdutoDetalhadoResponse;
+import br.com.siteware.sitewareProduto.produto.application.api.ProdutoListResponse;
+import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoRequest;
+import br.com.siteware.sitewareProduto.produto.application.api.ProdutoResponse;
+import br.com.siteware.sitewareProduto.produto.application.repository.ProdutoRepository;
+import br.com.siteware.sitewareProduto.produto.domain.Produto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;

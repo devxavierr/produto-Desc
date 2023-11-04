@@ -1,11 +1,11 @@
-package br.com.siteware.sitewareProduto.application.api;
+package br.com.siteware.sitewareProduto.produto.application.api;
 
-import br.com.siteware.sitewareProduto.domain.StatusPromocao;
+import br.com.siteware.sitewareProduto.produto.domain.StatusPromocao;
 import lombok.Value;
 
 import javax.validation.constraints.NotBlank;
 @Value
-public class ProdutoRequest {
+public class ProdutoAlteracaoRequest {
     @NotBlank
     private String nome;
     @NotBlank
