@@ -4,6 +4,7 @@ import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoR
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -19,6 +20,7 @@ public class Produto {
     @Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
     private UUID idProduto;
     @NotBlank
+    @Column(unique = true)
     private String nomeProduto;
     private Integer quantidadeProduto;
     @NotNull
