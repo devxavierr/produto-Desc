@@ -11,15 +11,17 @@ import java.util.UUID;
 public class ProdutoDetalhadoResponse {
     private UUID idProduto;
     private String nome;
-    private String preco;
+    private Integer quantidadeProduto;
+    private Float preco;
     private StatusPromocao statusPromocao;
 
     private LocalDateTime dataHoraDoCadastro;
 
     public ProdutoDetalhadoResponse(Produto produto) {
         this.idProduto = produto.getIdProduto();
-        this.nome = produto.getNome();
-        this.preco = produto.getPreco();
+        this.nome = produto.getNomeProduto();
+        this.quantidadeProduto = produto.getQuantidadeProduto();
+        this.preco = Float.valueOf(String.valueOf(produto.getPreco()));
         this.statusPromocao = produto.getStatusPromocao();
         this.dataHoraDoCadastro = produto.getDataHoraDoCadastro();
     }

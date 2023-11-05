@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -18,25 +19,28 @@ public class Produto {
     @Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
     private UUID idProduto;
     @NotBlank
-    private String nome;
-    @NotBlank
-    private String preco;
+    private String nomeProduto;
+    private Integer quantidadeProduto;
+    @NotNull
+    private Float preco;
     private StatusPromocao statusPromocao;
 
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
     public Produto(ProdutoAlteracaoRequest produtoRequest) {
-        this.nome = produtoRequest.getNome();
-        this.preco = produtoRequest.getPreco();
+        this.nomeProduto = produtoRequest.getNome();
+        this.quantidadeProduto = produtoRequest.getQuantidadeProduto();
+        this.preco = Float.valueOf(produtoRequest.getPreco());
         this.statusPromocao = produtoRequest.getStatusPromocao();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 
 
     public void altera(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
-        this.nome = produtoAlteracaoRequest.getNome();
-        this.preco = produtoAlteracaoRequest.getPreco();
+        this.nomeProduto = produtoAlteracaoRequest.getNome();
+        this.quantidadeProduto = produtoAlteracaoRequest.getQuantidadeProduto();
+        this.preco = Float.valueOf(produtoAlteracaoRequest.getPreco());
         this.statusPromocao = produtoAlteracaoRequest.getStatusPromocao();
         this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
     }

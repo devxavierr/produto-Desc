@@ -16,11 +16,10 @@ public class Carrinho {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "idCarrinho", updatable = false, unique = true, nullable = false)
-    private UUID idCarrinho;
+    private UUID idCliente;
     @NotBlank
-    private String carrinho;
-    @NotBlank
-    private String carrinhoPreco;
+    private String produtoCarrinho;
+    private String quantidade;
     private StatusPromocao statusPromocao;
 
     private LocalDateTime dataHoraDaCriacao;
