@@ -5,6 +5,7 @@ import lombok.Value;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Value
 public class ProdutoRequest {
@@ -12,6 +13,6 @@ public class ProdutoRequest {
     private String nome;
     private Integer quantidadeProduto;
     @NotNull
-    private Float preco;
+    private BigDecimal preco;
     private StatusPromocao statusPromocao;
 }

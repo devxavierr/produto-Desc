@@ -9,6 +9,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -24,8 +25,9 @@ public class Produto {
     private String nomeProduto;
     private Integer quantidadeProduto;
     @NotNull
-    private Float preco;
+    private BigDecimal preco;
     private StatusPromocao statusPromocao;
+    private BigDecimal precoTotal;
 
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
@@ -33,16 +35,18 @@ public class Produto {
     public Produto(ProdutoAlteracaoRequest produtoRequest) {
         this.nomeProduto = produtoRequest.getNome();
         this.quantidadeProduto = produtoRequest.getQuantidadeProduto();
-        this.preco = Float.valueOf(produtoRequest.getPreco());
+        this.preco = produtoRequest.getPreco();
         this.statusPromocao = produtoRequest.getStatusPromocao();
         this.dataHoraDoCadastro = LocalDateTime.now();
+        this.precoTotal = statusPromocao.aplicarPromocao(produtoRequest);
     }
+
 
 
     public void altera(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
         this.nomeProduto = produtoAlteracaoRequest.getNome();
         this.quantidadeProduto = produtoAlteracaoRequest.getQuantidadeProduto();
-        this.preco = Float.valueOf(produtoAlteracaoRequest.getPreco());
+        this.preco = produtoAlteracaoRequest.getPreco();
         this.statusPromocao = produtoAlteracaoRequest.getStatusPromocao();
         this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
     }

@@ -6,10 +6,12 @@ import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoR
 import br.com.siteware.sitewareProduto.produto.application.api.ProdutoResponse;
 import br.com.siteware.sitewareProduto.produto.application.repository.ProdutoRepository;
 import br.com.siteware.sitewareProduto.produto.domain.Produto;
+import br.com.siteware.sitewareProduto.produto.domain.StatusPromocao;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
