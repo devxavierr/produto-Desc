@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class ProdutoListResponse {
     private UUID idProduto;
     private String nome;
-    private BigDecimal quantidadeProduto;
+    private Integer quantidadeProduto;
     private Float preco;
     private StatusPromocao statusPromocao;
 

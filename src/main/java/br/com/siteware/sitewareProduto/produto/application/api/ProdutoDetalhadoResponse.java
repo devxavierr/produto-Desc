@@ -12,7 +12,7 @@ import java.util.UUID;
 public class ProdutoDetalhadoResponse {
     private UUID idProduto;
     private String nome;
-    private BigDecimal quantidadeProduto;
+    private Integer quantidadeProduto;
     private BigDecimal preco;
     private StatusPromocao statusPromocao;
     private BigDecimal precoTotal;

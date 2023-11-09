@@ -28,7 +28,7 @@ public class CarrinhoDeCompras {
         BigDecimal valorTotal = BigDecimal.ZERO;
         for (Produto produto : produtosNoCarrinho) {
             valorTotal = valorTotal.add(produto.getPreco());
-            valorTotal = valorTotal.multiply(produto.getQuantidadeProduto());
+            valorTotal = valorTotal.multiply(BigDecimal.valueOf(produto.getQuantidadeProduto()));
         }
         // Aplicar promoções, se houver
         // valorTotal = aplicarPromocoes(valorTotal);
