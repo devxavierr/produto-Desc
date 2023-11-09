@@ -1,11 +1,14 @@
 package br.com.siteware.sitewareProduto.CarrinhoDeCompras;
 
 import br.com.siteware.sitewareProduto.produto.domain.Produto;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
+@Service
 public class CarrinhoDeCompras {
     private List<Produto> produtosNoCarrinho = new ArrayList<>();
 
@@ -33,6 +36,10 @@ public class CarrinhoDeCompras {
 
     public void concluirCompra() {
         // Processar o pagamento e esvaziar o carrinho
+        produtosNoCarrinho.clear();
+    }
+
+    public void limparCarrinho() {
         produtosNoCarrinho.clear();
     }
 }
