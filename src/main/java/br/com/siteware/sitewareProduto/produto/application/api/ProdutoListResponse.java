@@ -4,6 +4,7 @@ import br.com.siteware.sitewareProduto.produto.domain.Produto;
 import br.com.siteware.sitewareProduto.produto.domain.StatusPromocao;
 import lombok.Value;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 public class ProdutoListResponse {
     private UUID idProduto;
     private String nome;
-    private Integer quantidadeProduto;
+    private BigDecimal quantidadeProduto;
     private Float preco;
     private StatusPromocao statusPromocao;
 

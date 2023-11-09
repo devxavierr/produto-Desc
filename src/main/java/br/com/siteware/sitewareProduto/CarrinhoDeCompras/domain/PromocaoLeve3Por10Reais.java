@@ -1,4 +1,4 @@
-package br.com.siteware.sitewareProduto.produto.domain;
+package br.com.siteware.sitewareProduto.CarrinhoDeCompras.domain;
 
 import java.math.BigDecimal;
 

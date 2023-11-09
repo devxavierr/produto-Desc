@@ -1,4 +1,4 @@
-package br.com.siteware.sitewareProduto.CarrinhoDeCompras;
+package br.com.siteware.sitewareProduto.CarrinhoDeCompras.application.api;
 
 import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoRequest;
 import br.com.siteware.sitewareProduto.produto.domain.Produto;

@@ -23,7 +23,7 @@ public class Produto {
     @NotBlank
     @Column(unique = true)
     private String nomeProduto;
-    private Integer quantidadeProduto;
+    private BigDecimal quantidadeProduto;
     @NotNull
     private BigDecimal preco;
     private StatusPromocao statusPromocao;
@@ -34,7 +34,7 @@ public class Produto {
 
     public Produto(ProdutoAlteracaoRequest produtoRequest) {
         this.nomeProduto = produtoRequest.getNome();
-        this.quantidadeProduto = produtoRequest.getQuantidadeProduto();
+        this.quantidadeProduto = BigDecimal.valueOf(produtoRequest.getQuantidadeProduto());
         this.preco = produtoRequest.getPreco();
         this.statusPromocao = produtoRequest.getStatusPromocao();
         this.dataHoraDoCadastro = LocalDateTime.now();
@@ -45,7 +45,7 @@ public class Produto {
 
     public void altera(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
         this.nomeProduto = produtoAlteracaoRequest.getNome();
-        this.quantidadeProduto = produtoAlteracaoRequest.getQuantidadeProduto();
+        this.quantidadeProduto = BigDecimal.valueOf(produtoAlteracaoRequest.getQuantidadeProduto());
         this.preco = produtoAlteracaoRequest.getPreco();
         this.statusPromocao = produtoAlteracaoRequest.getStatusPromocao();
         this.dataHoraDaUltimaAlteracao = LocalDateTime.now();

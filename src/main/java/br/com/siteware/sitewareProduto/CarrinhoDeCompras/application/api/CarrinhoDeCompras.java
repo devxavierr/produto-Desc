@@ -1,4 +1,4 @@
-package br.com.siteware.sitewareProduto.CarrinhoDeCompras;
+package br.com.siteware.sitewareProduto.CarrinhoDeCompras.application.api;
 
 import br.com.siteware.sitewareProduto.produto.domain.Produto;
 import org.springframework.stereotype.Component;
@@ -28,6 +28,7 @@ public class CarrinhoDeCompras {
         BigDecimal valorTotal = BigDecimal.ZERO;
         for (Produto produto : produtosNoCarrinho) {
             valorTotal = valorTotal.add(produto.getPreco());
+            valorTotal = valorTotal.multiply(produto.getQuantidadeProduto());
         }
         // Aplicar promoções, se houver
         // valorTotal = aplicarPromocoes(valorTotal);
