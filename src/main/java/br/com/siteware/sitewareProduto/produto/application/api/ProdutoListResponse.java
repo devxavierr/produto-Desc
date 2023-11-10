@@ -21,7 +21,6 @@ public class ProdutoListResponse {
                 .map(ProdutoListResponse::new)
                 .collect(Collectors.toList());
     }
-
     public ProdutoListResponse(Produto produto) {
         this.idProduto= produto.getIdProduto();
         this.nome = produto.getNomeProduto();
