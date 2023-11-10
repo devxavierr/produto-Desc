@@ -4,9 +4,12 @@ import br.com.siteware.sitewareProduto.produto.application.api.ProdutoAlteracaoR
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -18,26 +21,33 @@ public class Produto {
     @Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
     private UUID idProduto;
     @NotBlank
-    private String nome;
-    @NotBlank
-    private String preco;
+    @Column(unique = true)
+    private String nomeProduto;
+    private Integer quantidadeProduto;
+    @NotNull
+    private BigDecimal preco;
     private StatusPromocao statusPromocao;
+    private BigDecimal precoTotal;
 
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
     public Produto(ProdutoAlteracaoRequest produtoRequest) {
-        this.nome = produtoRequest.getNome();
+        this.nomeProduto = produtoRequest.getNome();
+        this.quantidadeProduto = produtoRequest.getQuantidadeProduto();
         this.preco = produtoRequest.getPreco();
         this.statusPromocao = produtoRequest.getStatusPromocao();
         this.dataHoraDoCadastro = LocalDateTime.now();
+        this.precoTotal = statusPromocao.aplicarPromocao(produtoRequest);
     }
 
 
-    public void altera(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
-        this.nome = produtoAlteracaoRequest.getNome();
-        this.preco = produtoAlteracaoRequest.getPreco();
-        this.statusPromocao = produtoAlteracaoRequest.getStatusPromocao();
+
+    public void altera(ProdutoAlteracaoRequest produtoRequest) {
+        this.nomeProduto = produtoRequest.getNome();
+        this.quantidadeProduto = produtoRequest.getQuantidadeProduto();
+        this.preco = produtoRequest.getPreco();
+        this.statusPromocao = produtoRequest.getStatusPromocao();
         this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
     }
 
