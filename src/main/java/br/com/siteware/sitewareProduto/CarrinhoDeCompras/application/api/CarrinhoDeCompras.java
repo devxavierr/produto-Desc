@@ -28,15 +28,11 @@ public class CarrinhoDeCompras {
         BigDecimal valorTotal = BigDecimal.ZERO;
         for (Produto produto : produtosNoCarrinho) {
             valorTotal = valorTotal.add(produto.getPrecoTotal());
-           // valorTotal = valorTotal.multiply(BigDecimal.valueOf(produto.getQuantidadeProduto()));
         }
-        // Aplicar promoções, se houver
-        // valorTotal = aplicarPromocoes(valorTotal);
         return valorTotal;
     }
 
     public void concluirCompra() {
-        // Processar o pagamento e esvaziar o carrinho
         produtosNoCarrinho.clear();
     }
 
